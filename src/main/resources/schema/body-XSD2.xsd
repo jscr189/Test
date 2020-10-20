@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="doc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="article">
+          <xs:complexType>
+            <xs:sequence>
+             <xs:element name="body">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="section">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="title">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="emph">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="type" type="xs:string" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="section1" >
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="title">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="emph">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute name="type" type="xs:string" use="required" />
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element maxOccurs="unbounded" name="p">
+                                  <xs:complexType>
+                                    <xs:sequence minOccurs="0">
+                                      <xs:choice >
+                                        <xs:element name="figref">
+                                          <xs:complexType>
+                                            <xs:simpleContent>
+                                              <xs:extension base="xs:string">
+                                                <xs:attribute name="rids" type="xs:string" use="required" />
+                                              </xs:extension>
+                                            </xs:simpleContent>
+                                          </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="unbounded" name="emph">
+                                          <xs:complexType>
+                                            <xs:simpleContent>
+                                              <xs:extension base="xs:string">
+                                                <xs:attribute name="type" type="xs:string" use="required" />
+                                              </xs:extension>
+                                            </xs:simpleContent>
+                                          </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="citref">
+                                          <xs:complexType>
+                                            <xs:simpleContent>
+                                              <xs:extension base="xs:unsignedByte">
+                                                <xs:attribute name="rids" type="xs:string" use="required" />
+                                              </xs:extension>
+                                            </xs:simpleContent>
+                                          </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="intraref">
+                                          <xs:complexType>
+                                            <xs:simpleContent>
+                                              <xs:extension base="xs:string">
+                                                <xs:attribute name="rids" type="xs:string" use="required" />
+                                              </xs:extension>
+                                            </xs:simpleContent>
+                                          </xs:complexType>
+                                        </xs:element>
+                                      </xs:choice>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="fig">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="caption">
+                                        <xs:complexType mixed="true">
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="emph">
+                                              <xs:complexType>
+                                                <xs:simpleContent>
+                                                  <xs:extension base="xs:string">
+                                                    <xs:attribute name="type" type="xs:string" use="required" />
+                                                  </xs:extension>
+                                                </xs:simpleContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="graphic">
+                                        <xs:complexType>
+                                          <xs:attribute name="id" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="type" type="xs:string" use="required" />
+                                    <xs:attribute name="num" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="id" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="id" type="xs:string" use="required" />
+                              <xs:attribute name="level" type="xs:unsignedByte" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                         <xs:element maxOccurs="unbounded" name="p">
+                                  <xs:complexType>
+                                    <xs:sequence minOccurs="0">
+                                      <xs:choice >
+                                        <xs:element name="figref">
+                                          <xs:complexType>
+                                            <xs:simpleContent>
+                                              <xs:extension base="xs:string">
+                                                <xs:attribute name="rids" type="xs:string" use="required" />
+                                              </xs:extension>
+                                            </xs:simpleContent>
+                                          </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="unbounded" name="emph">
+                                          <xs:complexType>
+                                            <xs:simpleContent>
+                                              <xs:extension base="xs:string">
+                                                <xs:attribute name="type" type="xs:string" use="required" />
+                                              </xs:extension>
+                                            </xs:simpleContent>
+                                          </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="citref">
+                                          <xs:complexType>
+                                            <xs:simpleContent>
+                                              <xs:extension base="xs:unsignedByte">
+                                                <xs:attribute name="rids" type="xs:string" use="required" />
+                                              </xs:extension>
+                                            </xs:simpleContent>
+                                          </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="intraref">
+                                          <xs:complexType>
+                                            <xs:simpleContent>
+                                              <xs:extension base="xs:string">
+                                                <xs:attribute name="rids" type="xs:string" use="required" />
+                                              </xs:extension>
+                                            </xs:simpleContent>
+                                          </xs:complexType>
+                                        </xs:element>
+                                      </xs:choice>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="fig">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="caption">
+                                        <xs:complexType mixed="true">
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="emph">
+                                              <xs:complexType>
+                                                <xs:simpleContent>
+                                                  <xs:extension base="xs:string">
+                                                    <xs:attribute name="type" type="xs:string" use="required" />
+                                                  </xs:extension>
+                                                </xs:simpleContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="graphic">
+                                        <xs:complexType>
+                                          <xs:attribute name="id" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="type" type="xs:string" use="required" />
+                                    <xs:attribute name="num" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="id" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:string" use="required" />
+                        <xs:attribute name="level" type="xs:unsignedByte" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            <xs:element name="back">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="refs">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="title">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="emph">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="type" type="xs:string" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element maxOccurs="unbounded" name="cit">
+                            <xs:complexType >
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="author">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="surname" type="xs:string" />
+                                      <xs:element maxOccurs="unbounded" name="initial" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="etal" />
+                                <xs:element name="cit-tl" type="xs:string" />
+                                <xs:element name="pub-tl">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="emph">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute name="type" type="xs:string" use="required" />
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="date">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="year" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="vol" type="xs:string" />
+                                <xs:element name="pages">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="fpage" type="xs:string" />
+                                      <xs:element name="lpage" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="type" type="xs:string" use="required" />
+                              <xs:attribute name="num" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="id" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
